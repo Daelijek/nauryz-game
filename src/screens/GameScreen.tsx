@@ -25,6 +25,8 @@ export function GameScreen({ onWin }: GameScreenProps) {
   const [inCauldronIds, setInCauldronIds] = useState<Set<string>>(new Set());
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
   const [won, setWon] = useState(false);
+  const winTimeRef = useRef<number | null>(null);
+  const winTriggeredRef = useRef(false);
   const [wrongFeedback, setWrongFeedback] = useState(false);
   const [cauldronDragOver, setCauldronDragOver] = useState(false);
   const [draggingId, setDraggingId] = useState<string | null>(null);
@@ -49,6 +51,14 @@ export function GameScreen({ onWin }: GameScreenProps) {
     };
   }, [won]);
 
+  // Fire parent callback only after we finished updating child state.
+  useEffect(() => {
+    if (!won) return;
+    if (!winTriggeredRef.current) return;
+    if (winTimeRef.current === null) return;
+    onWin(winTimeRef.current);
+  }, [won, onWin]);
+
   const handleAddToCauldron = (id: string) => {
     if (won) return;
     const ing = getIngredientById(id);
@@ -64,8 +74,11 @@ export function GameScreen({ onWin }: GameScreenProps) {
             clearInterval(intervalRef.current);
             intervalRef.current = null;
           }
+          if (!winTriggeredRef.current) {
+            winTriggeredRef.current = true;
+            winTimeRef.current = elapsedSeconds;
+          }
           setWon(true);
-          onWin(elapsedSeconds);
         }
 
         return next;
