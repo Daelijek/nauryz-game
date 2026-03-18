@@ -1,0 +1,43 @@
+{
+  "yurt": {
+    "title": "Welcome to the yurt",
+    "start": "Start game",
+    "intro1": "Nauryz is a holiday of renewal and abundance.",
+    "intro2": "Make traditional Nauryz koje by choosing only the right ingredients."
+  },
+  "splash": {
+    "aria": "Intro",
+    "title": "Happy Nauryz!",
+    "subtitle": "Wishing you joy, health, and prosperity",
+    "hint": "Tap to continue"
+  },
+  "game": {
+    "timer": "Time",
+    "cauldron": "Cauldron",
+    "dropHere": "Drop here",
+    "wrongIngredient": "Wrong ingredient for Nauryz koje!"
+  },
+  "result": {
+    "title": "Great job!",
+    "time": "You finished in",
+    "message": "May your home always be filled with warmth, joy, and prosperity.\nHappy Nauryz!",
+    "playAgain": "Play again"
+  },
+  "ingredients": {
+    "meat": "Meat",
+    "wheat": "Wheat",
+    "rice": "Rice",
+    "onion": "Onion",
+    "salt": "Salt",
+    "water": "Water",
+    "kurt": "Kurt",
+    "milk": "Milk",
+    "apple": "Apple",
+    "candy": "Candy",
+    "soda": "Soda",
+    "chocolate": "Chocolate",
+    "icecream": "Ice cream",
+    "cake": "Cake"
+  }
+}
+
