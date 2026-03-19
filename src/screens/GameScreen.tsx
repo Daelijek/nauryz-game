@@ -197,7 +197,7 @@ export function GameScreen({ onWin }: GameScreenProps) {
         >
           <div className={`cauldron-drop-zone__inner ${wrongFeedback ? 'cauldron-drop-zone__inner--shake' : ''}`}>
           <img
-            src="/kazan.png"
+            src="/kazan.webp"
             alt=""
             className="cauldron-drop-zone__img"
             aria-hidden

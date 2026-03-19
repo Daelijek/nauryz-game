@@ -23,10 +23,10 @@ export function SplashScreen({ onDone }: SplashScreenProps) {
 
   const ornaments = useMemo<Ornament[]>(() => {
     const urls = [
-      '/backgroun_ornament1.png',
-      '/backgroun_ornament2.png',
-      '/backgroun_ornament3.png',
-      '/backgroun_ornament4.png',
+      '/backgroun_ornament1.webp',
+      '/backgroun_ornament2.webp',
+      '/backgroun_ornament3.webp',
+      '/backgroun_ornament4.webp',
     ];
     // deterministic-ish positions without randomness (avoids hydration issues)
     return Array.from({ length: 12 }).map((_, idx) => ({
@@ -89,7 +89,7 @@ export function SplashScreen({ onDone }: SplashScreenProps) {
 
       <div className="splash__content">
         <div className="splash__logo" aria-hidden>
-          <img className="splash__logoImg" src="/logo.png" alt="" />
+          <img className="splash__logoImg" src="/logo.webp" alt="" />
         </div>
         <div className="splash__title">{t('splash.title')}</div>
         <div className="splash__subtitle">{t('splash.subtitle')}</div>

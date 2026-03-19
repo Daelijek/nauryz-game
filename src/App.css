@@ -35,7 +35,7 @@
 .screen-yurt {
   font-family: 'Comfortaa', cursive;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.4) 100%),
-    url(/kigyz_uy_mobile.png) no-repeat center center;
+    url(/kigyz_uy_mobile.webp) no-repeat center center;
   background-size: cover;
   color: #fff;
 }
@@ -53,7 +53,7 @@
         rgba(0, 0, 0, 0.2) 50%,
         rgba(0, 0, 0, 0.4) 100%
       ),
-      url(/kigyz_uy_desktop.png) no-repeat center center;
+      url(/kigyz_uy_desktop.webp) no-repeat center center;
     background-size: cover;
   }
 }
@@ -81,7 +81,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: url(/zhaylau_mobile.png) no-repeat center center;
+  background: url(/zhaylau_mobile.webp) no-repeat center center;
   background-size: cover;
 
   /* Start small at "door" position (lower center of yurt). */
@@ -93,7 +93,7 @@
 
 @media (min-width: 768px) {
   .yurt-exit-reveal {
-    background: url(/zhaylau_desktop.png) no-repeat center center;
+    background: url(/zhaylau_desktop.webp) no-repeat center center;
     background-size: cover;
   }
 }
@@ -194,14 +194,14 @@
 /* Game: outdoor scene */
 .screen-game {
   font-family: 'Comfortaa', cursive;
-  background: url(/zhaylau_mobile.png) no-repeat center center;
+  background: url(/zhaylau_mobile.webp) no-repeat center center;
   background-size: cover;
   color: #fff;
 }
 
 @media (min-width: 768px) {
   .screen-game {
-    background: url(/zhaylau_desktop.png) no-repeat center center;
+    background: url(/zhaylau_desktop.webp) no-repeat center center;
     background-size: cover;
   }
 }
@@ -331,13 +331,13 @@
 }
 
 .cauldron-drop-zone--centered {
-  /* tuned to match the empty center area on zhaylau_mobile.png */
+  /* tuned to match the empty center area on zhaylau_mobile.webp */
   transform: translateY(12vh);
 }
 
 @media (min-width: 768px) {
   .cauldron-drop-zone--centered {
-    /* tuned for zhaylau_desktop.png framing */
+    /* tuned for zhaylau_desktop.webp framing */
     transform: translateY(26vh);
   }
 }
@@ -519,7 +519,7 @@
   width: min(110px, 16vw);
   pointer-events: none;
   z-index: 1;
-  background-image: url(/ornament.png);
+  background-image: url(/ornament.webp);
   background-repeat: repeat-y;
   background-position: center 0;
   background-size: contain;
