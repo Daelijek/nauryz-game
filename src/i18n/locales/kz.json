@@ -25,19 +25,19 @@
   },
   "ingredients": {
     "water": "Су",
-    "driedMeat": "Кептірілген ет",
+    "driedMeat": "Сүр ет",
     "millet": "Тары",
     "wheat": "Бидай",
     "rice": "Күріш",
     "butter": "Май",
     "airan": "Айран",
-    "salt": "Туз",
+    "salt": "Тұз",
     "onion": "Пияз",
     "apple": "Алма",
     "candy": "Кәмпит",
     "soda": "Газдалған су",
     "chocolate": "Шоколад",
-    "icecream": "Мәзбаған",
+    "icecream": "Балмұздақ",
     "cake": "Торт"
   }
 }
