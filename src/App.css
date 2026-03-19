@@ -375,9 +375,13 @@
   animation: result-exit-reveal-open 560ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+/* Сразу скрываем блок с текстом и кнопкой — остаётся только круг с фоном игры */
 .screen-result--exit .screen-result__content,
 .screen-result--exit .language-switcher {
-  animation: result-exit-content-out 220ms ease-out forwards;
+  opacity: 0;
+  visibility: hidden;
+  transition: none;
+  pointer-events: none;
 }
 
 @keyframes result-exit-reveal-open {
@@ -396,19 +400,6 @@
   }
 }
 
-@keyframes result-exit-content-out {
-  0% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-8px) scale(0.98);
-    filter: blur(3px);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .screen-result--exit .result-exit-reveal {
     animation: none !important;
@@ -416,10 +407,42 @@
     opacity: 1;
     filter: none;
   }
-  .screen-result--exit .screen-result__content,
-  .screen-result--exit .language-switcher {
-    animation: none !important;
-    opacity: 0;
+}
+
+/* Падающие орнаменты на экране результата */
+.result-ornaments {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.result-ornaments__item {
+  position: absolute;
+  top: -15%;
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.35;
+  animation: result-ornament-fall linear forwards;
+}
+
+@media (min-width: 768px) {
+  .result-ornaments__item {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@keyframes result-ornament-fall {
+  from {
+    transform: translateY(0) rotate(0deg);
+  }
+  to {
+    transform: translateY(120vh) rotate(180deg);
   }
 }
 
