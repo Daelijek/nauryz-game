@@ -89,7 +89,7 @@ export function SplashScreen({ onDone }: SplashScreenProps) {
 
       <div className="splash__content">
         <div className="splash__logo" aria-hidden>
-          <img className="splash__logoImg" src="/logo.webp" alt="" />
+          <img className="splash__logoImg" src="/logo.webp" alt="" loading="eager" fetchPriority="high" />
         </div>
         <div className="splash__title">{t('splash.title')}</div>
         <div className="splash__subtitle">{t('splash.subtitle')}</div>

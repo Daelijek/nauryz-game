@@ -10,14 +10,15 @@ type IngredientCardProps = {
 };
 
 const EMOJI_MAP: Record<string, string> = {
-  meat: '🥩',
+  water: '💧',
+  driedMeat: '🥩',
+  millet: '🫘',
   wheat: '🌾',
   rice: '🍚',
-  onion: '🧅',
+  butter: '🧈',
+  airan: '🥛',
   salt: '🧂',
-  water: '💧',
-  kurt: '🧀',
-  milk: '🥛',
+  onion: '🧅',
   apple: '🍎',
   candy: '🍬',
   soda: '🥤',

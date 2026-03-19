@@ -7,8 +7,8 @@ import { Timer } from '../components/Timer';
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
 
 const EMOJI_MAP: Record<string, string> = {
-  meat: '🥩', wheat: '🌾', rice: '🍚', onion: '🧅', salt: '🧂', water: '💧',
-  kurt: '🧀', milk: '🥛', apple: '🍎', candy: '🍬', soda: '🥤',
+  water: '💧', driedMeat: '🥩', millet: '🫘', wheat: '🌾', rice: '🍚', butter: '🧈', airan: '🥛', salt: '🧂',
+  onion: '🧅', apple: '🍎', candy: '🍬', soda: '🥤',
   chocolate: '🍫', icecream: '🍦', cake: '🎂',
 };
 
@@ -51,12 +51,16 @@ export function GameScreen({ onWin }: GameScreenProps) {
     };
   }, [won]);
 
-  // Fire parent callback only after we finished updating child state.
+  // After win: play transition animation, then navigate to result screen.
+  const WIN_TRANSITION_MS = 1600;
   useEffect(() => {
     if (!won) return;
     if (!winTriggeredRef.current) return;
     if (winTimeRef.current === null) return;
-    onWin(winTimeRef.current);
+    const timeoutId = window.setTimeout(() => {
+      onWin(winTimeRef.current!);
+    }, WIN_TRANSITION_MS);
+    return () => window.clearTimeout(timeoutId);
   }, [won, onWin]);
 
   const handleAddToCauldron = (id: string) => {
@@ -181,7 +185,12 @@ export function GameScreen({ onWin }: GameScreenProps) {
   };
 
   return (
-    <div className="screen screen-game" data-screen="game">
+    <div className={`screen screen-game${won ? ' screen-game--win' : ''}`} data-screen="game">
+      {won && (
+        <div className="screen-game__win-overlay" role="status" aria-live="polite">
+          <span className="screen-game__win-text">{t('result.title')}</span>
+        </div>
+      )}
       <LanguageSwitcher />
       <div className="game-hud">
         <Timer seconds={elapsedSeconds} />
@@ -201,6 +210,8 @@ export function GameScreen({ onWin }: GameScreenProps) {
             alt=""
             className="cauldron-drop-zone__img"
             aria-hidden
+            loading="eager"
+            fetchPriority="high"
           />
           <div className="cauldron-drop-zone__overlay">
             <span className="cauldron-drop-zone__label visually-hidden">{t('game.cauldron')}</span>
